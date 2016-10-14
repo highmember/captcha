@@ -7,9 +7,11 @@ function Captcha(pat,op,lop,rop){
   }
 }
 function Operator(op){
-  this.op = function(){
-    
-  }
+
+    if(op === 1){return ' + '}
+    else if(op === 2){return ' - '}
+    else if(op === 3){return ' * '}
+    else if(op === 4){return ' / '}
 }
 function LeftOperand(){
   this.lop = function(){
