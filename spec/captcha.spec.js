@@ -66,8 +66,12 @@ describe('Pattern 1', function () {
     expect(App.gen()).toEqual('1 + ONE');
   });
   it('should return "3 - FOUR" when input is 1,2,4,3', function () {
-    var App = new Captcha(1,2,4,3)
+    var App = new Captcha(1,2,3,4)
     expect(App.gen()).toEqual('3 - FOUR');
+  });
+  it('should return "6 / SEVEN" when input is 1,4,6,7', function () {
+    var App = new Captcha(1,4,6,7)
+    expect(App.gen()).toEqual('6 / SEVEN');
   });
 
 });
