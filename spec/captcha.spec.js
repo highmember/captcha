@@ -1,65 +1,58 @@
 function Captcha(pat,op,lop,rop){
+    var L = new LeftOperand(lop);
+    var O = new Operator(op);
+    var R = new RightOperand(rop);
   this.gen = function(){
-    let Left = new LeftOperand(pat,lop)
-    let Op = new Operator(op)
-    let Right = new RightOperand(pat,rop)
     if(pat === 1){
-      return Left.echo()+Op.echo()+Right.echo();
+      return R.toString() + O.toString() + L.toString();
     }
-    else if(pat === 2)
-    {}
+    else if(pat === 2){
+      return L.toString() + O.toString() + R.toString();
+    }
   }
 }
-function Operator(op){
-    var O = '';
-    if(op === 1){O += ' + '}
-    else if(op === 2){O += ' - '}
-    else if(op === 3){O += ' * '}
-    else if(op === 4){O += ' / '}
-    this.toString() =function() {return O;}
-}
-function LeftOperand(lop){
-  var L = '';
-    switch (lop) {
-      case 1: L+='ONE';break;   case 2: L+='TWO';break;
-      case 3: L+='THREE';break; case 4: L+='FOUR';break;
-      case 5: L+='FIVE';break;  case 6: L+='SIX';break;
-      case 7: L+='SEVEN';break; case 8: L+='EIGHT';break;
-      case 9: L+='NINE';break;  case 0: L+='ZERO';break;
-    }
-  this.toString() = function() {return L;}
-}
-function RightOperand(rop){
-  var R ='';
-    swich (rop){
-      case 1:  R+='0'; break;
-      case 2:  R+='1'; break;
-      case 3:  R+='2'; break;
-      case 4:  R+='3'; break;
-      case 5:  R+='4'; break;
-      case 6:  R+='5'; break;
-      case 7:  R+='6'; break;
-      case 8:  R+='7'; break;
-      case 9:  R+='8'; break;
-      case 10: R+='9'; break;
-<<<<<<< HEAD
-    }
-  this.toString = function(){return R;}
-}
-=======
-
-    }
-    this.echo = function(){return R;}
+function Operator(ope){
+  this.toString = function() {
+    if(ope === 1){return ' + '}
+    else if(ope === 2){return  ' - '}
+    else if(ope === 3){return ' * '}
+    else if(ope === 4){return ' / '}
   }
+}
+function LeftOperand(lope){
+  this.toString = function(){
+    switch (lope) {
+      case 1:return 'ONE';break;   case 2:return 'TWO';break;
+      case 3:return 'THREE';break; case 4:return 'FOUR';break;
+      case 5:return 'FIVE';break;  case 6:return 'SIX';break;
+      case 7:return 'SEVEN';break; case 8:return 'EIGHT';break;
+      case 9:return 'NINE';break;  case 0:return 'ZERO';break;
+    }
+  }
+}
+function RightOperand(rope){
+  this.toString = function(){
+    switch (rope){
+      case 0:return '0'; break;
+      case 1:return '1'; break;
+      case 2:return '2'; break;
+      case 3:return '3'; break;
+      case 4:return '4'; break;
+      case 5:return '5'; break;
+      case 6:return '6'; break;
+      case 7:return '7'; break;
+      case 8:return '8'; break;
+      case 9:return '9'; break;
 
-
->>>>>>> 561995a4839b818fb629f46a65f5bafcc8f82004
+    }
+  }
+}
 
 describe('Test Captcha App', function () {
 describe('Pattern 1', function () {
   it('should return "1 + ONE" when input is 1,1,1,1', function () {
-    let App = new Captcha(1,1,1,1)
-    expect(App.gen).toEqual('1 + ONE');
+    var App = new Captcha(1,1,1,1)
+    expect(App.gen()).toEqual('1 + ONE');
   });
 
 
