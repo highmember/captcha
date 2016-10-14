@@ -115,6 +115,10 @@ describe('Pattern 1', function () {
            let App = new Captcha(2,2,2,2)
            expect(App.gen()).toEqual('TWO - 2');
           });
+          it('should return "THREE + 4" when input is 2,1,3,4', function () {
+            let App = new Captcha(2,1,3,4)
+            expect(App.gen()).toEqual('THREE + 4');
+           });
 
 });
 });
