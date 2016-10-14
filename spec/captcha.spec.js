@@ -42,9 +42,18 @@ function RightOperand(rop){
       case 8:  R+='7'; break;
       case 9:  R+='8'; break;
       case 10: R+='9'; break;
+<<<<<<< HEAD
     }
   this.toString = function(){return R;}
 }
+=======
+
+    }
+    this.echo = function(){return R;}
+  }
+
+
+>>>>>>> 561995a4839b818fb629f46a65f5bafcc8f82004
 
 describe('Test Captcha App', function () {
 describe('Pattern 1', function () {
