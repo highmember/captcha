@@ -34,12 +34,9 @@ function LeftOperand(pat,lop){
     }
   }
 }
-function RightOperand(pat,rop){
+function RightOperand(rop){
   var R ='';
-  if (pat=== 2){
-
     swich (rop){
-
       case 1:  R+='0'; break;
       case 2:  R+='1'; break;
       case 3:  R+='2'; break;
@@ -50,29 +47,8 @@ function RightOperand(pat,rop){
       case 8:  R+='7'; break;
       case 9:  R+='8'; break;
       case 10: R+='9'; break;
-
     }
-  }
-
-  else if (pat=== 1){
-
-    swich (rop){
-
-      case 1:  R+='ZERO'; break;
-      case 2:  R+='ONE'; break;
-      case 3:  R+='TWO'; break;
-      case 4:  R+='THREE'; break;
-      case 5:  R+='FOUR'; break;
-      case 6:  R+='FIVE'; break;
-      case 7:  R+='SIX'; break;
-      case 8:  R+='SEVEN'; break;
-      case 9:  R+='EIGHT'; break;
-      case 10: R+='NINE'; break;
-
-    }
-  }
-
-  this.echo = function(){return R;}
+  this.toString = function(){return R;}
 }
 
 describe('Test Captcha App', function () {
