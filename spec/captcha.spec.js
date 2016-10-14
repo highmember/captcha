@@ -18,7 +18,43 @@ function LeftOperand(){
 
   }
 }
-function RightOperand(){
+function RightOperand(pat,rop){
+  if (pat=== 2){
+
+    swich (rop){
+
+      case 1: return '0'; break;
+      case 2: return '1'; break;
+      case 3: return '2'; break;
+      case 4: return '3'; break;
+      case 5: return '4'; break;
+      case 6: return '5'; break;
+      case 7: return '6'; break;
+      case 8: return '7'; break;
+      case 9: return '8'; break;
+      case 10: return '9'; break;
+
+    }
+  }
+
+  else if (pat=== 2){
+
+    swich (rop){
+
+      case 1: return 'ZERO'; break;
+      case 2: return 'ONE'; break;
+      case 3: return 'TWO'; break;
+      case 4: return 'THREE'; break;
+      case 5: return 'FOUR'; break;
+      case 6: return 'FIVE'; break;
+      case 7: return 'SIX'; break;
+      case 8: return 'SEVEN'; break;
+      case 9: return 'EIGHT'; break;
+      case 10: return 'NINE'; break;
+
+    }
+  }
+
   this.rop = function(){
 
   }
