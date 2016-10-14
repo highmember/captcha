@@ -91,6 +91,14 @@ describe('Pattern 1', function () {
     var App = new Captcha(1,4,3,3)
     expect(App.gen()).toEqual('3 * THREE');
   });
+  it('should return "9 + NINE" when input is 1,1,9,9', function () {
+    var App = new Captcha(1,1,9,9)
+    expect(App.gen()).toEqual('9 + NINE');
+  });
+  it('should return "5 + NINE" when input is 1,1,5,9', function () {
+    var App = new Captcha(1,1,5,9)
+    expect(App.gen()).toEqual('5 + NINE');
+  });
   it('should return "SIX + 9" when input is 2,1,6,9', function () {
     let App = new Captcha(2,1,6,9)
     expect(App.gen()).toEqual('SIX + 9');
