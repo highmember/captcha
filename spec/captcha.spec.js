@@ -95,6 +95,10 @@ describe('Pattern 1', function () {
       let App = new Captcha(2,4,3,7)
       expect(App.gen()).toEqual('THREE * 7');
      });
+     it('should return "SEVEN + 8" when input is 2,1,7,8', function () {
+       let App = new Captcha(2,1,7,8)
+       expect(App.gen()).toEqual('SEVEN + 8');
+      });
 
 });
 });
