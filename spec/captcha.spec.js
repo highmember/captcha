@@ -83,10 +83,18 @@ describe('Pattern 1', function () {
     let App = new Captcha(2,1,6,9)
     expect(App.gen()).toEqual('SIX + 9');
   });
-  it('should return "SIX + 9" when input is 2,1,6,9', function () {
+  it('should return "FOUR - 8" when input is 2,2,4,8', function () {
     let App = new Captcha(2,2,4,8)
     expect(App.gen()).toEqual('FOUR - 8');
    });
-   
+   it('should return "FIVE - 9" when input is 2,2,5,9', function () {
+     let App = new Captcha(2,2,5,9)
+     expect(App.gen()).toEqual('FIVE - 9');
+    });
+    it('should return "THREE * 7" when input is 2,4,3,7', function () {
+      let App = new Captcha(2,4,3,7)
+      expect(App.gen()).toEqual('THREE * 7');
+     });
+
 });
 });
