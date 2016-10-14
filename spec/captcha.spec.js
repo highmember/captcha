@@ -91,14 +91,18 @@ describe('Pattern 1', function () {
      let App = new Captcha(2,2,5,9)
      expect(App.gen()).toEqual('FIVE - 9');
     });
-    it('should return "THREE * 7" when input is 2,4,3,7', function () {
+    it('should return "THREE / 7" when input is 2,4,3,7', function () {
       let App = new Captcha(2,4,3,7)
-      expect(App.gen()).toEqual('THREE * 7');
+      expect(App.gen()).toEqual('THREE / 7');
      });
      it('should return "SEVEN + 8" when input is 2,1,7,8', function () {
        let App = new Captcha(2,1,7,8)
        expect(App.gen()).toEqual('SEVEN + 8');
       });
+      it('should return "ONE + 1" when input is 2,1,1,1', function () {
+        let App = new Captcha(2,1,1,1)
+        expect(App.gen()).toEqual('ONE + 1');
+       });
 
 });
 });
