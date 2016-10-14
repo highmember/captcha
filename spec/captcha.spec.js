@@ -107,6 +107,10 @@ describe('Pattern 1', function () {
          let App = new Captcha(2,4,5,6)
          expect(App.gen()).toEqual('FIVE / 6');
         });
+        it('should return "FOUR * 5" when input is 2,3,4,5', function () {
+          let App = new Captcha(2,3,4,5)
+          expect(App.gen()).toEqual('FOUR * 5');
+         });
 
 });
 });
