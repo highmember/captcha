@@ -1,7 +1,7 @@
 function Captcha(pat,op,lop,rop){
     var L = new LeftOperand(pat,lop);
     var O = new Operator(op);
-    var R = new RightOperand(rop);
+    var R = new RightOperand(pat,rop);
   this.gen = function(){
     if(pat === 1)       {return L.toString() + O.toString() + R.toString();}
     else if(pat === 2)  {return L.toString() + O.toString() + R.toString();}
@@ -41,22 +41,28 @@ function LeftOperand(patt,lope){
   this.toString = function(){return l}
 }
 
-function RightOperand(rope){
-  this.toString = function(){
-    switch (rope){
-      case 0:return '0'; break;
-      case 1:return '1'; break;
-      case 2:return '2'; break;
-      case 3:return '3'; break;
-      case 4:return '4'; break;
-      case 5:return '5'; break;
-      case 6:return '6'; break;
-      case 7:return '7'; break;
-      case 8:return '8'; break;
-      case 9:return '9'; break;
-
+function RightOperand(patt,rope){
+  r = ''
+  if(patt===1){
+    switch (rope) {
+      case 1:r += 'ONE';break;   case 2:r += 'TWO';break;
+      case 3:r += 'THREE';break; case 4:r += 'FOUR';break;
+      case 5:r += 'FIVE';break;  case 6:r += 'SIX';break;
+      case 7:r += 'SEVEN';break; case 8:r +=  'EIGHT';break;
+      case 9:r += 'NINE';break;  case 0:r +=  'ZERO';break;
     }
   }
+
+  else if(patt===2){
+    switch (rope){
+      case 0:r +=  '0'; break;     case 1:r +=  '1'; break;
+      case 2:r +=  '2'; break;     case 3:r +=  '3'; break;
+      case 4:r +=  '4'; break;     case 5:r +=  '5'; break;
+      case 6:r +=  '6'; break;     case 7:r +=  '7'; break;
+      case 8:r +=  '8'; break;     case 9:r +=  '9'; break;
+    }
+  }
+  this.toString = function(){return r}
 }
 
 describe('Test Captcha App', function () {
@@ -75,7 +81,12 @@ describe('Pattern 1', function () {
   });
   it('should return "SIX + 9" when input is 2,1,6,9', function () {
     let App = new Captcha(2,1,6,9)
-    expect(App.gen).toEqual('SIX + 9');
-
+    expect(App.gen()).toEqual('SIX + 9');
+  });
+  it('should return "SIX + 9" when input is 2,1,6,9', function () {
+    let App = new Captcha(2,2,4,8)
+    expect(App.gen()).toEqual('FOUR - 8');
+   });
+   
 });
 });
