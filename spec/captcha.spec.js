@@ -87,9 +87,9 @@ describe('Pattern 1', function () {
     var App = new Captcha(1,4,5,7)
     expect(App.gen()).toEqual('5 / SEVEN');
   });
-  it('should return "3 * THREE" when input is 1,3,3,3', function () {
+  it('should return "3 / THREE" when input is 1,3,3,3', function () {
     var App = new Captcha(1,4,3,3)
-    expect(App.gen()).toEqual('3 * THREE');
+    expect(App.gen()).toEqual('3 / THREE');
   });
   it('should return "9 + NINE" when input is 1,1,9,9', function () {
     var App = new Captcha(1,1,9,9)
@@ -128,17 +128,17 @@ describe('Pattern 1', function () {
          expect(App.gen()).toEqual('FIVE / 6');
         });
         it('should return "FOUR * 5" when input is 2,3,4,5', function () {
-          let App = new Captcha(2,3,4,5)
-          expect(App.gen()).toEqual('FOUR * 5');
-         });
+         let App = new Captcha(2,3,4,5)
+         expect(App.gen()).toEqual('FOUR * 5');
+        });
          it('should return "TWO - 2" when input is 2,2,2,2', function () {
-           let App = new Captcha(2,2,2,2)
-           expect(App.gen()).toEqual('TWO - 2');
-          });
+          let App = new Captcha(2,2,2,2)
+          expect(App.gen()).toEqual('TWO - 2');
+        });
           it('should return "THREE + 4" when input is 2,1,3,4', function () {
-            let App = new Captcha(2,1,3,4)
-            expect(App.gen()).toEqual('THREE + 4');
-           });
+          let App = new Captcha(2,1,3,4)
+          expect(App.gen()).toEqual('THREE + 4');
+         });
 
 });
 });
